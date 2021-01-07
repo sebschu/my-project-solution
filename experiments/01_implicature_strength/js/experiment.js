@@ -122,17 +122,17 @@ function make_slides(f) {
       var target_sentence = stim.ButNotAllSentence;
 
       //handle display of context 
-       if (exp.condition == "context") {
-         // extract context data
-         var contexthtml = stim.Context;
-         // reformat the speaker information for context
-         contexthtml = contexthtml.replace(/Speaker A:/g, "<b>Speaker #1:</b>");
-         contexthtml = contexthtml.replace(/Speaker B:/g, "<b>Speaker #2:</b>");
-         $(".case").html(contexthtml);
-       } else {
-         var contexthtml = "";
-         $(".case").html(contexthtml);
-       }
+      // if (exp.condition == "context") {
+      //   // extract context data
+      //   var contexthtml = stim.Context;
+      //   // reformat the speaker information for context
+      //   contexthtml = contexthtml.replace(/Speaker A:/g, "<b>Speaker #1:</b>");
+      //   contexthtml = contexthtml.replace(/Speaker B:/g, "<b>Speaker #2:</b>");
+      //   $(".case").html(contexthtml);
+      // } else {
+      //   var contexthtml = "";
+      //   $(".case").html(contexthtml);
+      // }
 
       // replace the placeholder in the HTML document with the relevant sentences for this trial
       $("#trial-originalSen").html(original_sentence);
@@ -213,7 +213,7 @@ function init() {
   exp.stimuli = stimuli; //call _.shuffle(stimuli) to randomize the order;
   exp.n_trials = exp.stimuli.length;
 
-   exp.condition = _.sample(["context", "no-context"]); //can randomize between subjects conditions here
+  // exp.condition = _.sample(["context", "no-context"]); //can randomize between subjects conditions here
   
   exp.system = {
     Browser: BrowserDetect.browser,
